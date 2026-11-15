@@ -1,4 +1,4 @@
-# Session 14: Architecture board: teams 1-4
+# Session 14: Architecture board: shippers 1-4
 **Date:** 2026-12-16, 16:30–19:00
 
 ## Goals

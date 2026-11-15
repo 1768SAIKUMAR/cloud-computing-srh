@@ -1,4 +1,4 @@
-# Workshop: Architecture board: teams 1-4
+# Workshop: Architecture board: shippers 5-7
 
 ## Core task
 TODO

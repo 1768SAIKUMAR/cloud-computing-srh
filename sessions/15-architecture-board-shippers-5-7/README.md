@@ -1,4 +1,4 @@
-# Session 15: Architecture board: teams 5-7
+# Session 15: Architecture board: shippers 5-7
 **Date:** 2026-12-18, 16:30–19:00
 
 ## Goals
