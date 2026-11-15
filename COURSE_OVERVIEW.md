@@ -61,7 +61,7 @@ Session-by-session dates and materials are in the [README](README.md). Week 3 ha
 
 The project is individual: you each build your own platform in your own Google Cloud project. In session 3 you get one of seven shippers to serve, each with its own targets for data freshness, accuracy and cost. Three of you share each shipper, but each of you builds and defends your own design, so no two platforms are exactly the same.
 
-The project grows out of the workshops. Each session adds a layer, so by the end of week 4 you have a deployed platform. Along the way, expect a few real-world surprises.
+The project grows out of the workshops. Each session adds a layer. By the end of week 3 you have built both a Lambda and a Kappa version of your platform, and by the end of week 4 a deployed platform. Along the way, expect a few real-world surprises.
 
 At the end of week 4 you receive the **evolution brief**: a new business challenge your platform has to meet. You spend week 5 redesigning it, then present it to the architecture board.
 
