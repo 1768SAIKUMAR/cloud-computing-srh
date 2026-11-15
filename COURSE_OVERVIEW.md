@@ -76,15 +76,14 @@ Everything goes in your fork of this repo, due **Tuesday 15 December**:
 
 ### The architecture board
 
-Each of you gets about 10 minutes: a live demo of your platform, your redesign pitch, and questions. Students present grouped by shipper, shippers 1 to 4 on 16 December and 5 to 7 on 18 December, so the three designs for each shipper come back to back. When you're not presenting, you sit on the board and score the others.
+Each of you gets about 10 minutes: a live demo of your platform, your redesign pitch, and questions. Students present grouped by shipper, shippers 1 to 4 on 16 December and 5 to 7 on 18 December, so the three designs for each shipper come back to back. Your board is the other two students on your shipper, plus me. They already know the shipper, so no time goes on context: they ask the questions, and I do the scoring.
 
 ## Assessment
 
 | Component | Weight |
 | --- | --- |
 | Attendance | 10% |
-| Project: your platform (30%) and its redesign (15%) | 45% |
-| Peer rating: the other students, sitting as the board, score each presentation | 10% |
+| Project: your platform (40%) and its redesign (15%) | 55% |
 | Performance at the board: questions on your project and your AI use | 35% |
 
 Every component is individual.
