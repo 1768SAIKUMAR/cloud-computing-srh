@@ -8,7 +8,7 @@ Sessions run 16:30–19:00 in seminar room 1.4.
 1. Read the [course overview](COURSE_OVERVIEW.md)
 2. [Set up Google Cloud](setup/gcp.md)
 3. [Set up Databricks Free Edition](setup/databricks.md)
-4. Fork this repo in session 3: your fork holds your own design. In session 4 your team picks one member's fork as the team repo and adds the other two as collaborators.
+4. Fork this repo in session 3: your fork holds your own project, and it's what you hand in.
 
 ## Schedule
 | # | Date | Session |
@@ -26,8 +26,8 @@ Sessions run 16:30–19:00 in seminar room 1.4.
 | 11 | 2026-12-09 | [Project lab](sessions/11-project-lab) |
 | 12 | 2026-12-11 | [Evolution brief](sessions/12-evolution-brief) |
 | 13 | 2026-12-14 | [Redesign lab](sessions/13-redesign-lab) |
-| 14 | 2026-12-16 | [Architecture board: teams 1-4](sessions/14-architecture-board-teams-1-4) |
-| 15 | 2026-12-18 | [Architecture board: teams 5-7](sessions/15-architecture-board-teams-5-7) |
+| 14 | 2026-12-16 | [Architecture board: shippers 1-4](sessions/14-architecture-board-shippers-1-4) |
+| 15 | 2026-12-18 | [Architecture board: shippers 5-7](sessions/15-architecture-board-shippers-5-7) |
 
 ## Repo layout
 - `setup/` — account setup guides

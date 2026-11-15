@@ -18,14 +18,13 @@ This is the public student repo for **Cloud Computing and Data Architectures**, 
 - 15 sessions, 16 Nov to 18 Dec 2026, 16:30-19:00, seminar room 1.4. 21 students.
 - Session shape: recap, concepts, industry context, break, workshop (about 80 min; session 1 runs 55).
 - Platform: Google Cloud, region `europe-west3`. Databricks Free Edition for session 9. Snowflake is comparison only.
-- Every student has their own GCP free-trial project (their dev environment). The same Terraform deploys to any project via `project_id`. Each student keeps their own Terraform state.
-- **Week 1 (sessions 1-3) is individual.** In session 3 each student gets one of seven shipper profiles; three students share each profile.
-- **Teams of three form in session 4**: the three students with the same shipper profile. Their first task is to compare their three designs and agree on one. Each team picks one member's project as production.
+- Every student has their own GCP free-trial project. The same Terraform deploys to any project via `project_id`. Each student keeps their own Terraform state.
+- **The project is individual throughout.** There are no teams. In session 3 each student gets one of seven shipper profiles; three students share each profile, but each builds and defends their own design.
 
 ## Assessment
 Marking lives in project/marking.md, which is the source of truth. Checkpoints are signposts, not marked.
 
-Hand-in: one GitHub repo per team with README, code and Terraform, a report of max 4 pages (template in `project/`), a `prompts/` folder, and a contribution statement. AI use is allowed if students can explain everything they submit.
+Hand-in: each student's own fork of this repo with README, code and Terraform, a report of max 4 pages (template in `project/`), and a `prompts/` folder. AI use is allowed if students can explain everything they submit.
 
 ## Repo layout
 - `README.md`, `COURSE_OVERVIEW.md`: entry points for students.

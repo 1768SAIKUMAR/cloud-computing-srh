@@ -59,36 +59,35 @@ Session-by-session dates and materials are in the [README](README.md). Week 3 ha
 
 ## The project
 
-Week 1 (sessions 1 to 3) is individual: you each build in your own Google Cloud project. In session 3 you get one of seven shippers to serve, each with its own targets for data freshness, accuracy and cost. Three of you share each shipper.
+The project is individual: you each build your own platform in your own Google Cloud project. In session 3 you get one of seven shippers to serve, each with its own targets for data freshness, accuracy and cost. Three of you share each shipper, but each of you builds and defends your own design, so no two platforms are exactly the same.
 
-Teams of three form in session 4: the three students with the same shipper. Your first task as a team is to compare your three designs and agree on one, then pick one member's project as production. No two teams build exactly the same thing.
-
-The project grows out of the workshops. Each session adds a layer, so by the end of week 4 your team has a deployed platform. Along the way, expect a few real-world surprises.
+The project grows out of the workshops. Each session adds a layer, so by the end of week 4 you have a deployed platform. Along the way, expect a few real-world surprises.
 
 At the end of week 4 you receive the **evolution brief**: a new business challenge your platform has to meet. You spend week 5 redesigning it, then present it to the architecture board.
 
 ### What you hand in
 
-Everything goes in your team's GitHub repo, due **Tuesday 15 December**:
+Everything goes in your fork of this repo, due **Tuesday 15 December**:
 
 - **A README** that explains your platform and lets someone else run it.
 - **Your code and Terraform.**
 - **A report of no more than 4 pages**, using the [template](project/report-template.md). It explains your thinking: why you made your choices, what you tried, what failed and what you changed.
 - **A prompts folder** with the key AI prompts you used, and what you changed in the output.
-- **A contribution statement** signed by all three team members.
 
 ### The architecture board
 
-Each team gets 30 minutes: a live demo of your platform, your redesign pitch, and questions. Anyone in the team may be asked about any part of the system, so make sure you understand all of it, not just your own piece.
+Each of you gets about 10 minutes: a live demo of your platform, your redesign pitch, and questions. Students present grouped by shipper, shippers 1 to 4 on 16 December and 5 to 7 on 18 December, so the three designs for each shipper come back to back. When you're not presenting, you sit on the board and score the others.
 
 ## Assessment
 
-| Component | Weight | Individual or team |
-| --- | --- | --- |
-| Attendance | 10% | Individual |
-| Team project (build and redesign) | 45% | Team |
-| Peer rating: the other teams score each presentation at the board | 10% | Team |
-| Performance at the board: questions on your part and your AI use | 35% | Individual |
+| Component | Weight |
+| --- | --- |
+| Attendance | 10% |
+| Project (build and redesign) | 45% |
+| Peer rating: the other students, sitting as the board, score each presentation | 10% |
+| Performance at the board: questions on your project and your AI use | 35% |
+
+Every component is individual.
 
 There is no written exam. Details are in [project/marking.md](project/marking.md).
 
