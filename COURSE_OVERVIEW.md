@@ -43,7 +43,7 @@ Every session runs 16:30 to 19:00 in seminar room 1.4 and follows the same shape
 
 Slides are kept short. Most of the learning happens in the workshop.
 
-Each workshop has a **core task** most people finish in class, a **stretch task** if you're fast, and a **checkpoint branch** in this repo. If you get stuck or miss a session, you can start the next one from the checkpoint and still keep up.
+Each workshop has a **core task** most people finish in class, a **stretch task** if you're fast, and a **checkpoint** that lists what you should have by the end. If you get stuck or miss a session, ask me and we'll get you back on track.
 
 ## Schedule
 
@@ -59,7 +59,7 @@ Session-by-session dates and materials are in the [README](README.md). Week 3 ha
 
 ## The project
 
-The project is individual: you each build your own platform in your own Google Cloud project. In session 3 you get one of seven shippers to serve, each with its own targets for data freshness, accuracy and cost. Three of you share each shipper, but each of you builds and defends your own design, so no two platforms are exactly the same.
+The project is individual: you each build your own platform in your own Google Cloud project. In session 3 you get one of seven shippers to serve, each with its own targets for data freshness, carrier reliability and monthly budget. Three of you share each shipper, but each of you builds and defends your own design, so no two platforms are exactly the same.
 
 The project grows out of the workshops. Each session adds a layer. By the end of week 3 you have built both a Lambda and a Kappa version of your platform, and by the end of week 4 a deployed platform. Along the way, expect a few real-world surprises.
 
