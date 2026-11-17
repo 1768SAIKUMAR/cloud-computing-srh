@@ -8,3 +8,5 @@
 6. Create a project called `cc-<your-name>`.
 
 Budgets only send emails; they don't stop anything. Stop Dataflow jobs and scale clusters down at the end of every session.
+
+If the free trial sign-up doesn't work for you, see [hosted-project.md](hosted-project.md).

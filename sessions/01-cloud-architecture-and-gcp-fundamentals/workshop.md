@@ -41,7 +41,7 @@ Ask your neighbour to open your project in the console. They should see it, but 
 Nothing today bills by the hour, and an empty bucket costs nothing, so leave it: we use it on Wednesday.
 
 ## If something goes wrong
-- **Card verification fails:** try another card, or finish signing up after class.
+- **Card verification fails, or the sign-up is blocked:** try another card. If it still fails, tell me and I'll give you a project on the course billing account: see [setup/hosted-project.md](../../setup/hosted-project.md).
 - **`Error 403` or "API not enabled":** the error message contains a link. Open it, enable the API, wait a minute, apply again.
 - **"Bucket name not available":** names are global. Check `project_id` in `terraform.tfvars` is your own.
 - **Wrong project:** run `gcloud config get-value project` and compare it with your project ID.
