@@ -94,4 +94,5 @@ Nothing today bills by the hour, and this much data stays inside the free tier. 
 
 - **`Not found: Dataset`** in `load.sh`: run `terraform apply` first, and check `gcloud config get-value project` is your project.
 - **Location mismatch** when loading: the dataset and bucket must be in the same region. Both default to `europe-west3`.
-- **`Already Exists`** in Terraform: someone created the table by hand. Delete it in the console, or ask me about `terraform import`.
+- **`Already Exists`** in Terraform: someone created the table by hand, or Terraform lost its state because your Cloud Shell home folder was wiped. Delete it in the console, or ask me about `terraform import`.
+- **Repo folder gone, or Terraform needs reinstalling every session:** see the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips).
