@@ -1,6 +1,6 @@
 # Workshop: your first design
 
-**Time:** about 80 minutes, on your own, in Cloud Shell and your browser. You need Wednesday's `freight` dataset in BigQuery, including your `schedules` table.
+**Time:** about 80 minutes, on your own, in Cloud Shell and your browser. You need Wednesday's `freight` dataset in BigQuery, including your `schedules` table. The steps are the same on your own account and on the course account.
 
 Today you get your shipper, measure how its carriers perform, and make your first architecture decision. Everything goes in your own fork of the course repo, which from today is your project.
 
