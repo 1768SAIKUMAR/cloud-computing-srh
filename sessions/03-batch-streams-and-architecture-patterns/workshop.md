@@ -88,4 +88,5 @@ Stop anything that bills by the hour before you leave.
 - **`Not found: Table ...:freight.schedules`**: you haven't created the `schedules` table yet. Do step 3 of Wednesday's workshop (the TODO in `main.tf`), then run `./load.sh` again.
 - **`No matching signature for function DATETIME_DIFF`**: your `schedules` table has the arrival columns as `STRING`. They must be `DATETIME`: fix the type in `main.tf`, run `terraform apply`, and reload with `./load.sh`.
 - **`Authentication failed`** or **`Permission denied`** on `git push`: paste the token as the password, not your GitHub password, and check it has write access to your fork.
+- **Repo folder gone:** see the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips), then clone again.
 - **`fatal: No such remote 'origin'`** or **`remote upstream already exists`**: you've already run part of step 1. Run `git remote -v` to see what you have.
