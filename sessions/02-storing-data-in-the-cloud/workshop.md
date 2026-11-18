@@ -68,6 +68,8 @@ How many times fewer bytes does the partitioned table scan? Now try `SELECT *` i
 
 Write each query in the BigQuery console, and dry-run it before you run it.
 
+No rows back? Check the exact values in the column you're filtering on first, for example `SELECT DISTINCT mode FROM freight.rates`. Text matches are case-sensitive.
+
 1. **What did shippers spend per trade lane in October?** Use `bookings`. Highest first.
 2. **Which ocean carrier had the cheapest average spot rate for a 40HC on Asia-North Europe in October?** Use `rates`.
 3. **What share of each ocean carrier's sailings arrived no more than 24 hours late?** Use `schedules`. Hint: `DATETIME_DIFF(actual_arrival, planned_arrival, HOUR)`.
