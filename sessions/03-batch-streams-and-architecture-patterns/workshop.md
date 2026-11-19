@@ -2,9 +2,9 @@
 
 **Time:** about 80 minutes, on your own, in Cloud Shell and your browser. You need Wednesday's `freight` dataset in BigQuery, including your `schedules` table. The steps are the same on your own account and on the course account.
 
-Today you get your shipper, measure how its carriers perform, and make your first architecture decision. Everything goes in your own fork of the course repo, which from today is your project.
+Today you get your launch customer: the shipper whose contract sets your platform's targets. You measure how its carriers perform, and make your first architecture decision. Everything goes in your own fork of the course repo, which from today is your project.
 
-## 1. Fork the repo and get your shipper (10 min)
+## 1. Fork the repo and get your launch customer (10 min)
 
 1. On GitHub, open [the course repo](https://github.com/sham100768/cloud-computing-srh) and click **Fork**. Keep the name `cloud-computing-srh`.
 2. In Cloud Shell, point your existing copy at your fork, and keep the course repo as `upstream`:
@@ -20,16 +20,16 @@ Today you get your shipper, measure how its carriers perform, and make your firs
 
    From now on, `git pull upstream main` gets new course material, and `git push origin main` saves your work to your fork.
 3. To push from Cloud Shell, GitHub needs a token instead of your password. On GitHub go to **Settings → Developer settings → Personal access tokens → Fine-grained tokens**, and create one for your fork only, with **Contents: read and write**. Paste it when `git push` asks for a password.
-4. I'll hand out the shipper profiles. Find yours in [project/shippers.md](../../project/shippers.md) and write down its ID and three targets: freshness, reliability and budget.
+4. I'll hand out the launch customers. Find yours in [project/shippers.md](../../project/shippers.md) and write down its ID and three targets: freshness, reliability and budget.
 
 ## 2. Delay per lane (25 min)
 
-How reliable are the carriers your shipper actually books? Measure it, lane by lane.
+How reliable are the carriers your launch customer actually books? Measure it, lane by lane.
 
 1. Open `starter/delay_per_lane.sql`. It joins `bookings` to `schedules` on `schedule_id` and works out, per lane, the average arrival delay and the share of shipments that arrived on time (no more than 24 hours late).
-2. Fill in the one blank: your shipper's ID.
+2. Fill in the one blank: your launch customer's shipper ID.
 3. Paste it into the BigQuery console, dry-run it, then run it.
-4. Create `docs/metrics.md` in your fork with a table of the results. Add your shipper's reliability target next to each lane's on-time rate, and mark each lane as meeting the target or not.
+4. Create `docs/metrics.md` in your fork with a table of the results. Add your launch customer's reliability target next to each lane's on-time rate, and mark each lane as meeting the target or not.
 
 ```bash
 mkdir -p ~/cloud-computing-srh/docs
@@ -40,23 +40,23 @@ Which lanes miss the target? Which carriers serve them? Keep the numbers: they'r
 
 ## 3. Architecture diagram (20 min)
 
-Start from the reference platform in today's slides and in [architecture/](../../architecture/), and adapt it to your shipper.
+Start from the reference platform in today's slides and in [architecture/](../../architecture/), and adapt it to your launch customer. This is your company's platform; your launch customer decides which parts must be live.
 
 - Mark every box as **live** (must meet your freshness target) or **batch** (can run on a schedule).
-- Add anything your shipper needs that the reference doesn't have, and cross out anything it doesn't need.
+- Add anything your launch customer needs that the reference doesn't have, and cross out anything it doesn't need.
 - Any tool is fine: a photo of a paper sketch, draw.io, or a Mermaid diagram in Markdown.
 
 Commit it to `docs/architecture/` in your fork. A photo is easiest to upload on GitHub in the browser: open your fork, **Add file → Upload files**, and put it in `docs/architecture/`. Then run `git pull origin main` in Cloud Shell so your copy has it too.
 
 ## 4. ADR 001: Lambda or Kappa (20 min)
 
-Copy the [ADR template](../../project/adr-template.md) to `docs/adr/001-<slug>.md`, for example `docs/adr/001-processing-pattern.md`, and decide: should your shipper's platform follow Lambda or Kappa?
+Copy the [ADR template](../../project/adr-template.md) to `docs/adr/001-<slug>.md`, for example `docs/adr/001-processing-pattern.md`, and decide: should your platform follow Lambda or Kappa?
 
-- **Context:** your shipper, its three targets, and your delay numbers from step 2.
-- **Options:** at least Lambda and Kappa, and what each would mean for your shipper.
+- **Context:** your launch customer, its three targets, and your delay numbers from step 2.
+- **Options:** at least Lambda and Kappa, and what each would mean for your launch customer.
 - **Decision and consequences:** cost, freshness, complexity, and what gets harder.
 
-Either answer can be right. What matters is that your reasons come from your shipper's targets and your evidence.
+Either answer can be right. What matters is that your reasons come from your launch customer's targets and your evidence.
 
 Save your work:
 
@@ -77,7 +77,7 @@ Your fork on GitHub contains:
 
 ## Stretch
 
-- **Cost check.** Add a rough monthly cost estimate to ADR 001, box by box, using the [Google Cloud pricing calculator](https://cloud.google.com/products/calculator). Does your design fit your shipper's budget? If not, what would you change?
+- **Cost check.** Add a rough monthly cost estimate to ADR 001, box by box, using the [Google Cloud pricing calculator](https://cloud.google.com/products/calculator). Does your design fit your launch customer's budget? If not, what would you change?
 
 ## Teardown
 
