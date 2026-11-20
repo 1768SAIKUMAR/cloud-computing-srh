@@ -58,11 +58,12 @@ Copy the [ADR template](../../project/adr-template.md) to `docs/adr/001-<slug>.m
 
 Either answer can be right. What matters is that your reasons come from your launch customer's targets and your evidence.
 
-Save your work:
+Save your work. `git add -A` takes everything you've changed, including your `schedules` table from Wednesday and today's SQL, not just `docs`. Your Terraform state and `terraform.tfvars` stay out: `.gitignore` excludes them.
 
 ```bash
 cd ~/cloud-computing-srh
-git add docs
+git add -A
+git status          # check the list: docs, .tf and .sql files, no tfstate or tfvars
 git commit -m "Session 3: metrics, diagram, ADR 001"
 git push origin main
 ```
