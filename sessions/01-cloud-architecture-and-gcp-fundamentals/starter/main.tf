@@ -12,6 +12,16 @@ resource "google_storage_bucket" "raw" {
   # Fine for coursework; think twice before doing this in production.
   force_destroy = true
 
+  lifecycle_rule {
+    condition {
+      age = 30
+    }
+    action {
+      type          = "SetStorageClass"
+      storage_class = "NEARLINE"
+    }
+  }
+
   labels = {
     course  = "cloud-computing-srh"
     session = "01"
@@ -21,8 +31,8 @@ resource "google_storage_bucket" "raw" {
 # TODO (step 4): give your neighbour read-only access to your project.
 # Uncomment, then run `terraform plan` and read what it will change before you apply.
 #
-# resource "google_project_iam_member" "neighbour_viewer" {
-#   project = var.project_id
-#   role    = "roles/viewer"
-#   member  = "user:${var.neighbour_email}"
-# }
+resource "google_project_iam_member" "neighbour_viewer" {
+  project = var.project_id
+  role    = "roles/viewer"
+  member  = "user:${var.neighbour_email}"
+}
