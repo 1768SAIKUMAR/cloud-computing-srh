@@ -167,9 +167,6 @@ terraform apply -var node_count=0
 
 Next session, `terraform apply` brings the node back. Don't run `terraform destroy`: you build Kafka on this cluster on Wednesday, and its data has to last until session 8.
 
-- **Own account:** as above.
-- **Course account:** run `terraform destroy` instead, because the free cluster fee is shared by every course project. You recreate the cluster at the start of each session.
-
 ## If something goes wrong
 
 - **`Error 403: Kubernetes Engine API has not been used in project ...`**: Terraform has only just switched the API on. Wait a minute and run `terraform apply` again.

@@ -213,9 +213,6 @@ terraform apply -var node_count=0
 
 Don't delete the cluster, the `kafka` namespace or the PersistentVolumeClaims: session 7 reads this topic, and session 8 replays it. Next time, `terraform apply` brings everything back with its data, and the producer carries on where it stopped. The brokers take a few minutes to come up.
 
-- **Own account:** as above.
-- **Course account:** if you destroy the cluster, the log goes with it. Ask me before you do.
-
 ## If something goes wrong
 
 - **`freight-dual` pods stuck in `Pending`**: `kubectl -n kafka describe pod freight-dual-0` says why. `Insufficient cpu` or `Insufficient memory` means something else is using the node: check `kubectl get pods --all-namespaces` and delete Monday's generator if it's still there. No nodes at all means you skipped step 0.
