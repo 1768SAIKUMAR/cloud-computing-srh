@@ -59,6 +59,8 @@ class KafkaSink:
         self.topic = topic
         self.producer = KafkaProducer(
             bootstrap_servers=bootstrap,
+            # Wait until every in-sync replica has the event before counting it as sent.
+            acks="all",
             key_serializer=str.encode,
             value_serializer=lambda v: json.dumps(v).encode(),
         )
