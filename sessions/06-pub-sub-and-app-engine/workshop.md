@@ -19,6 +19,8 @@ gcloud app create --region=europe-west3
 gcloud app describe --format="value(locationId)"
 ```
 
+If `gcloud app create` asks to enable the App Engine Admin API, answer `y`. If `describe` then says there's no application, wait a minute and run it again.
+
 This also creates the App Engine default service account, `<project-id>@appspot.gserviceaccount.com`, which your webhook runs as.
 
 ## 2. Create the topics, subscriptions and table (10 min)
@@ -185,7 +187,7 @@ An empty list means zero nodes. If a VM is listed, run `terraform apply -var nod
 - **Terraform: `Service account <project-id>@appspot.gserviceaccount.com does not exist`**: you skipped step 1. Run `gcloud app create`, then `terraform apply` again.
 - **Terraform: `Service account service-...@gcp-sa-pubsub.iam.gserviceaccount.com does not exist`**: Google creates Pub/Sub's service agent a moment after the API is switched on. Wait a minute and run `terraform apply` again.
 - **Terraform: `Not found: Dataset ...:freight`**: you haven't got session 2's dataset. Run session 2's `terraform apply` first.
-- **`gcloud app deploy` fails on a build step with a permission error**: wait two minutes for the build permission to apply and try again. If the error names a service account other than `<number>-compute@developer.gserviceaccount.com`, tell me which.
+- **`gcloud app deploy` fails on a build step with a permission error**: wait two minutes for the build permission to apply and try again. Terraform gives the build role to two accounts, `<number>-compute@developer.gserviceaccount.com` and `<project-id>@appspot.gserviceaccount.com`, because Google builds as one or the other depending on the project's age. If the error names any other account, tell me which.
 - **The webhook returns `500` or `503`**: read its logs with `gcloud app logs tail -s default`. `PermissionDenied` means the publish permission hasn't applied yet; wait a minute.
 - **Nothing in `air_events_raw`**: open the `air-events-to-bigquery` subscription in the console and check its state. If it complains about the table, check the table's columns weren't changed.
 - **`pull` returns nothing**: the messages were already acked. Use `seek` (step 7), or send some more.

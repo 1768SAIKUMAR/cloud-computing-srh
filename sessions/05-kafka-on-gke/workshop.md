@@ -103,13 +103,17 @@ kk kafka-console-consumer.sh --bootstrap-server $B --topic ocean-events \
   --property print.key=true --property print.partition=true --property print.offset=true
 ```
 
-The key is the shipment ID. Pick one from the output and find all its events:
+Kafka 4.3 warns that `--property` is deprecated. It still works, so ignore the warning.
+
+The key is the shipment ID. Pick one from the output and find all its events in the first 200:
 
 ```bash
 kk kafka-console-consumer.sh --bootstrap-server $B --topic ocean-events \
-  --from-beginning --timeout-ms 10000 \
+  --from-beginning --max-messages 200 \
   --property print.key=true --property print.partition=true | grep LIVE-SHP0
 ```
+
+If it doesn't stop, there aren't 200 events yet: it waits for the producer to write them, which takes up to a minute and a half.
 
 Narrow the `grep` to the shipment you picked. Every event for one shipment is on the same partition, so they stay in order. Across partitions there is no order at all.
 
@@ -145,7 +149,7 @@ kk kafka-topics.sh --bootstrap-server $B --describe --topic ocean-events
 Broker 1 has dropped out of the `Isr`, and any partition it led has a new leader. Is the producer still running?
 
 ```bash
-kubectl -n kafka logs deployment/ocean-producer --tail=5
+kubectl -n kafka logs deployment/ocean-producer --tail=5    # the count keeps going up
 kubectl -n kafka get pods --watch       # Ctrl+C when freight-dual-1 is back
 kk kafka-topics.sh --bootstrap-server $B --describe --topic ocean-events
 ```
@@ -204,7 +208,7 @@ git push origin main
 
 ## Teardown
 
-Scale the cluster to zero. Kafka's three disks stay, with the log on them, for about €1 a month; nothing bills by the hour:
+Scale the cluster to zero. Kafka's three disks stay, with the log on them, for about €3 a month; nothing bills by the hour:
 
 ```bash
 cd ~/cloud-computing-srh/sessions/04-docker-and-kubernetes-on-gke/starter
