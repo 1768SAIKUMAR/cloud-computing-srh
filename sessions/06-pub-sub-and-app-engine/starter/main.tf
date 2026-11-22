@@ -160,3 +160,13 @@ resource "google_project_iam_member" "build" {
   member     = local.compute_sa
   depends_on = [google_project_service.services]
 }
+
+# In newer projects Google doesn't give default service accounts any roles, and
+# the build runs as the App Engine default service account instead. It needs
+# the same role, or the deploy fails with "does not have access to the bucket".
+resource "google_project_iam_member" "build_as_appengine" {
+  project    = var.project_id
+  role       = "roles/cloudbuild.builds.builder"
+  member     = local.appengine_sa
+  depends_on = [google_project_service.services]
+}
