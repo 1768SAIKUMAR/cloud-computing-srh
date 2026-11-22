@@ -63,7 +63,7 @@ docker tag generator:v1 $REPO/generator:v1
 docker push $REPO/generator:v1
 ```
 
-Find the image in the console under **Artifact Registry → freight**. The registry is ready within a minute of `terraform apply` starting, so you don't have to wait for the cluster.
+Find the image in the console under **Artifact Registry → freight**. The registry is ready two or three minutes after `terraform apply` starts, once Terraform has switched on the APIs, so you don't have to wait for the cluster. If `docker push` says the repository isn't found, wait a minute and push again.
 
 ## 4. Connect to the cluster (5 min)
 
