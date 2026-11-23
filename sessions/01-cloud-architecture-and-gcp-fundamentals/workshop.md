@@ -9,7 +9,7 @@ Follow [setup/gcp.md](../../setup/gcp.md). Create a project called `cc-<your-nam
 Search **Budgets and alerts** in the console. Create a budget of €50 and keep the 50%, 90% and 100% alerts. A budget only sends emails. It does not stop anything running.
 
 ## 3. Create a bucket with Terraform
-Open **Cloud Shell** (the `>_` icon, top right of the console). Terraform is already installed there. Do the three [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips) once before you start.
+Open **Cloud Shell** (the `>_` icon, top right of the console). Do the three [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips) once before you start: the third installs Terraform.
 
 ```bash
 git clone https://github.com/sham100768/cloud-computing-srh.git

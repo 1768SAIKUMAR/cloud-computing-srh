@@ -179,7 +179,7 @@ Check your GKE cluster is still at zero nodes from Wednesday:
 gcloud compute instances list --filter="name~^gke-freight"
 ```
 
-An empty list means zero nodes. If a VM is listed, run `terraform apply -var node_count=0` in `sessions/04-docker-and-kubernetes-on-gke/starter`.
+An empty list means zero nodes; gcloud may add a warning that the filter keys "were not present in any resource", which only means there was nothing to list. If a VM is listed, run `terraform apply -var node_count=0` in `sessions/04-docker-and-kubernetes-on-gke/starter`.
 
 ## If something goes wrong
 
