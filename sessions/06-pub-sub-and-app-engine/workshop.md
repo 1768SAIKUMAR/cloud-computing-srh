@@ -6,11 +6,14 @@ Ocean events go through Kafka, which you run yourself. Air events take the manag
 
 ## 1. Create your App Engine app (5 min)
 
-Get today's material first:
+Get today's material first, and check Terraform:
 
 ```bash
 cd ~/cloud-computing-srh && git pull upstream main
+terraform version                              # should print Terraform v1.9.8
 ```
+
+If `terraform version` prints installation instructions instead of a version, follow tip 3 in the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips) before step 2. Without a real Terraform, `terraform apply` looks as if it worked but creates nothing.
 
 > **Read this before you run the next command.** An App Engine app's region is permanent: you can't change it, and you can't delete the app. Make sure it says `europe-west3`.
 

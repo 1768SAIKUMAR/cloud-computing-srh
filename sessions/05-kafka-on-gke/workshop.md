@@ -4,15 +4,18 @@
 
 ## 0. Wake the cluster up (5 min)
 
-Your cluster has been at zero nodes since Monday. Bring the node back, and get today's material:
+Your cluster has been at zero nodes since Monday. Get today's material, check Terraform, and bring the node back:
 
 ```bash
 cd ~/cloud-computing-srh && git pull upstream main
+terraform version                              # should print Terraform v1.9.8
 cd sessions/04-docker-and-kubernetes-on-gke/starter
 terraform apply                                # node_count goes back to 1
 $(terraform output -raw get_credentials)
 kubectl get nodes
 ```
+
+If `terraform version` prints installation instructions instead of a version, follow tip 3 in the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips) first. Without a real Terraform, `terraform apply` looks as if it worked but changes nothing, and `kubectl get nodes` finds no node.
 
 Monday's stdout generator isn't needed any more. Remove it to free its share of the node:
 

@@ -31,10 +31,10 @@ Most workshops run in Cloud Shell. It keeps everything in your home folder (`~`)
    curl -sSfLO https://releases.hashicorp.com/terraform/$V/terraform_${V}_linux_amd64.zip
    curl -sSfL https://releases.hashicorp.com/terraform/$V/terraform_${V}_SHA256SUMS | grep linux_amd64.zip | sha256sum -c -
    mkdir -p ~/bin && unzip -o terraform_${V}_linux_amd64.zip terraform -d ~/bin && rm terraform_${V}_linux_amd64.zip
-   echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+   grep -qs 'HOME/bin:' ~/.bashrc || echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc; source ~/.bashrc
    terraform version
    ```
 
-   The check should print `OK`, and `terraform version` should print `Terraform v1.9.8`. It may add that a newer version exists: ignore that, since 1.9.8 is the version the workshops are tested with. Open a new Cloud Shell tab and run `terraform version` there too. If it prints installation instructions instead of a version, run the `echo 'export PATH=…'` line again.
+   The check should print `OK`, and `terraform version` should print `Terraform v1.9.8`. It may add that a newer version exists: ignore that, since 1.9.8 is the version the workshops are tested with. Open a new Cloud Shell tab and run `terraform version` there too. If it prints installation instructions instead of a version, check that `grep 'HOME/bin' ~/.bashrc` shows the `export PATH` line. Running these steps again is safe: they add that line only once.
 
 If your repo folder has disappeared, run `git clone` again. If `terraform apply` then says a bucket or table **already exists**, Terraform has lost its state: tell me, and we'll bring your resources back under Terraform with `terraform import`.
