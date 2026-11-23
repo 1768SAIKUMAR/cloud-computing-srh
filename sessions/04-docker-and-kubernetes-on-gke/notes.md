@@ -68,6 +68,13 @@
 ### Workshop
 Check Terraform, start the cluster, build and push the image while it's created, deploy the generator, then delete its pod and watch it come back, scale it, and roll a change out and back. Break things on purpose: it shows you how quickly Kubernetes recovers. Cloud Shell no longer includes Terraform, so if `terraform version` prints installation instructions, follow tip 3 in the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips). Scale to zero before you leave. The steps are in [workshop.md](workshop.md).
 
+## Corrections to the recording
+- **Terraform isn't built into Cloud Shell.** I said in the lecture that it now is. It isn't: Cloud Shell's `terraform` only prints installation instructions. Install it once in your home folder with tip 3 in the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips), and check with `terraform version`.
+- **GKE** stands for Google Kubernetes Engine.
+- **Your credit is $300**, not £300.
+- **Stateful systems with an operator are a good reason to use Kubernetes.** I doubted the slide in the lecture, but it's right: an operator handles the disks, restarts and upgrades a stateful system needs. Kafka with Strimzi on Wednesday is exactly that.
+- **Requests and limits still matter.** I said it's mostly just requests now. Both count: the request decides where a pod can be scheduled, and the memory limit is what kills a container that uses too much. You'll see both in the workshop's Starve it stretch.
+
 ## Questions from the room
 - **The control loop "closes the gap": what's the gap?** The difference between the desired state and what's running. Say you declared five pods and one goes down: the controller sees four and starts a fifth. Cloud providers react almost at once.
 - **Is each pod a container?** Essentially. A pod is one or more containers that share a network; usually it's one.
