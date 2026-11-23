@@ -63,7 +63,7 @@ docker tag generator:v1 $REPO/generator:v1
 docker push $REPO/generator:v1
 ```
 
-Find the image in the console under **Artifact Registry → freight**. The registry is ready two or three minutes after `terraform apply` starts, once Terraform has switched on the APIs, so you don't have to wait for the cluster. If `docker push` says the repository isn't found, wait a minute and push again.
+Find the image in the console under **Artifact Registry → freight**. The registry is ready two or three minutes after `terraform apply` starts, once Terraform has switched on the APIs, so you don't have to wait for the cluster. If `docker push` fails with `failed to do request`, the registry isn't there yet: wait a minute and push again.
 
 ## 4. Connect to the cluster (5 min)
 
@@ -153,7 +153,7 @@ git push origin main
 
 - **Run a Job.** `kubectl apply -f k8s/batch-job.yaml` runs the batch generator once. Watch it with `kubectl get jobs` and read its output with `kubectl logs job/generator-batch`. Where are the files now? The `emptyDir` volume died with the pod; next session, Kafka's data lives on disks that survive.
 - **Break it on purpose.** Set the image tag to `v2`, which doesn't exist, and apply. What does `kubectl get pods` say, and what does `kubectl describe` tell you? Fix it.
-- **Starve it.** Set the memory limit to `16Mi` and apply. Find `OOMKilled` in `kubectl describe pod`. Then put it back.
+- **Starve it.** Set both the memory request and the memory limit to `8Mi` and apply. (A request can't be bigger than its limit, so changing only the limit is rejected.) Find `OOMKilled` in `kubectl get pods` and in `kubectl describe pod`. Then put both back.
 - **Standard or Autopilot?** Write two or three sentences in `docs/kubernetes.md`: which would you choose for your launch customer, and why?
 
 ## Teardown
