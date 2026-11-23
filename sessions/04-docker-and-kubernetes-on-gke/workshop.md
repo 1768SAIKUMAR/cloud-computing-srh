@@ -4,13 +4,23 @@
 
 The cluster takes about 10 minutes to create, so start it first and build the image while you wait.
 
-## 1. Start the cluster (10 min, mostly waiting)
+## 0. Check Terraform (2 min)
 
-Get today's material from the course repo, then create the registry and the cluster:
+Get today's material from the course repo, then check Terraform:
 
 ```bash
 cd ~/cloud-computing-srh && git pull upstream main
-cd sessions/04-docker-and-kubernetes-on-gke/starter
+terraform version
+```
+
+It should print `Terraform v1.9.8`. If it prints installation instructions instead, or says `command not found`, Cloud Shell's Terraform isn't a real one: follow tip 3 in the [Cloud Shell tips](../../setup/gcp.md#cloud-shell-tips) to install it in your home folder, then run `terraform version` again. Without a real Terraform, `terraform apply` looks as if it worked but creates nothing.
+
+## 1. Start the cluster (10 min, mostly waiting)
+
+Create the registry and the cluster:
+
+```bash
+cd ~/cloud-computing-srh/sessions/04-docker-and-kubernetes-on-gke/starter
 cp terraform.tfvars.example terraform.tfvars   # set project_id
 terraform init
 terraform apply
